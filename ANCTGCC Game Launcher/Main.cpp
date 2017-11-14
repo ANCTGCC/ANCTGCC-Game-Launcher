@@ -1,7 +1,7 @@
 ﻿# include <Siv3D.hpp>
 
 /* Window parameter */
-const String launcher_title = L"GCC 2016 Launcher";
+const String launcher_title = L"ANCTGCC 2017 Game Launcher";
 const Size window_size(800, 600);
 
 /* UI parameter */
@@ -20,7 +20,7 @@ const int transit_speed = 50;
 const int background_brighten_speed = 2;
 
 /* Game info parameter*/
-const String game_0_title = L"ＧＣＣの世界から外に出ます。";
+const String game_0_title = L"ばいばい！また遊んでね！";
 const String game_1_title = L"ＧＣＣの世界へようこそ！";
 
 struct Game
@@ -50,7 +50,7 @@ struct Game
 
 void Main()
 {
-	const Rect msgbox_rect(120, 400, 560, 150);
+	const Rect msgbox_rect(80, 400, 640, 150);
 
 	Window::SetTitle(launcher_title);
 	Window::Resize(window_size);
@@ -91,14 +91,15 @@ void Main()
 	{
 		/* Update section */ {
 			if (camera_position == icon_positions[cursored_index].x) {
-				if (Input::KeyEnter.clicked || Input::KeyUp.clicked || Input::MouseL.clicked && enter_zone.contains(Mouse::Pos())) {
+				if (Input::KeyEnter.clicked || Input::KeyUp.clicked || Input::KeyZ.clicked || Input::KeySpace.clicked ||
+					Input::MouseL.clicked && enter_zone.contains(Mouse::Pos())) {
 					if (cursored_index == 0) {
 						break;
 					}
 					else if (cursored_index == 1) {
 						do {
 							games[1].background.drawAt(Window::Size() / 2, credit_color);
-							font(credits).draw(120, 20, Palette::Black);
+							font(credits).draw(120, 40, Palette::White);
 						} while (System::Update() && !Input::AnyKeyClicked());
 					}
 					else {
@@ -132,7 +133,7 @@ void Main()
 		}
 		/* Draw section */ {
 			games[cursored_index].background.draw(100, 0, background_cover_color.setAlpha(alpha));
-			for (auto i = Max(0, cursored_index - 1); i < Min((int)games.size(), cursored_index + 1); i++) {
+			for (auto i = Max(0, cursored_index - 1); i < Min((int)games.size(), cursored_index + 2); i++) {
 				games[i].icon.draw(icon_positions[i].movedBy(icon_offset.x - camera_position, 0));
 			}
 
