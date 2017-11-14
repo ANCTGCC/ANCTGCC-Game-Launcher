@@ -40,5 +40,7 @@
 64826	FILE	"Engine/Shaders/D3D11/FXAA_Q39.ps"
 
 // App Resource
-100		ICON	"Icon.ico"
+100		ICON	"Engine/Icon.ico"
 101		FILE	"Engine/Splash.png"
+200		FILE	"Engine/App/arrow.png"
+201		FILE	"Engine/App/arrow_forward.png"

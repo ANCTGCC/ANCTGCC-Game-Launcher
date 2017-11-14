@@ -64,6 +64,9 @@
     <Filter Include="リソース ファイル\Engine\Fonts">
       <UniqueIdentifier>{000cd0e5-09db-4f98-a089-d67236e791f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\Engine\App">
+      <UniqueIdentifier>{9d38bdeb-a0b8-49f6-bb01-8f0b9b2175be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -76,11 +79,11 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Icon.ico">
-      <Filter>リソース ファイル</Filter>
-    </Image>
     <Image Include="Engine\Splash.png">
       <Filter>リソース ファイル\Engine</Filter>
+    </Image>
+    <Image Include="Icon.ico">
+      <Filter>リソース ファイル\Engine\App</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
